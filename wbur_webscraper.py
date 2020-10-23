@@ -32,7 +32,7 @@ def scrape_articles(urls: List[str]) -> List[str]:
     articles = []
     
     for url in urls:
-        url = f'{base_url}{url}'
+        url = f"{base_url}{url}"
         req = Request(url)
         html_page = urlopen(req)
         
@@ -62,7 +62,7 @@ def create_csv(articles: List[str], year: int) -> None:
         'text': articles
     })
     
-    df.to_csv(f'wbur{year}.csv')
+    df.to_csv(f"wbur{year}.csv")
 
 
 test_scrape = scrape_articles(["/news/2014/01/01/family-homelessness", "/news/2014/01/01/james-avery", "/news/2014/01/01/woman-killed-in-boston-drawbridge-accident"])
